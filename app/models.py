@@ -1,7 +1,6 @@
+from flask_login import LoginManager, UserMixin
 from flask_sqlalchemy import SQLAlchemy
-
-from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import UserMixin, LoginManager
+from werkzeug.security import check_password_hash, generate_password_hash
 
 login = LoginManager()
 db = SQLAlchemy()
@@ -17,7 +16,9 @@ class CourseModel(db.Model):
     technology = db.Column(db.String())
     launch_url = db.Column(db.String())
 
-    def __init__(self, course_name, course_duration, course_description, technology, launch_url):
+    def __init__(
+        self, course_name, course_duration, course_description, technology, launch_url
+    ):
         self.course_name = course_name
         self.course_duration = course_duration
         self.course_description = course_description
@@ -29,7 +30,7 @@ class CourseModel(db.Model):
 
 
 class UserModel(UserMixin, db.Model):
-    __tablename__ = 'users'
+    __tablename__ = "users"
 
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(80), unique=True)
@@ -44,5 +45,5 @@ class UserModel(UserMixin, db.Model):
 
 
 @login.user_loader
-def load_user(id):
-    return UserModel.query.get(int(id))
+def load_user(email, password):
+    return UserModel.query.get(email=email, password=password)
