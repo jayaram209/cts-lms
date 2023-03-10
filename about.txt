@@ -1,2 +1,3 @@
-Cognizant technologies
-LMS application
+Learning Management System (LMS) Application is a Restful Micro service application,
+where it allows users to search/add/delete the course from system for all the technology.
+

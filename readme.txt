@@ -48,4 +48,3 @@ sample data:
     - /api/v1.0/lms/courses/delete/Platform-Cloud-Azure-2022-FSE
     - /api/v1.0/lms/courses/add/
     - /api/v/1.0/lms/courses/get/<Platform>/<500>/<1000>
-

@@ -1,0 +1,57 @@
+<html>
+<header>
+
+</header>
+
+<body>
+<h4>Learning Management System (LMS) Application is a Restful Micro service application, where it allows users to search/add/delete the course from system for all the technology.<h4>
+<pre>
+Authentication is required to access below the api's
+REST ENDPOINTS:
+    - /api/v1.0/lms/company/register
+    - /api/v1.0/lms/courses/info/<-technology->
+    - /api/v1.0/lms/courses/getall
+    - /api/v1.0/lms/courses/delete/<-coursename->
+    - /api/v1.0/lms/courses/add/
+    - /api/v/1.0/lms/courses/get/<-technology->/<-durationFromRange->/<-durationToRange->
+
+
+Working of API's:
+    - /api/v1.0/lms/company/register
+        -->POST data: {
+                        "email":"LmsUser@gmail.com",
+                        "username":"LmsUser",
+                        "password":"LmsUser"
+                     }
+    - /api/v1.0/lms/company/register
+        -->POST data: {
+                        "email":"LmsUser@gmail.com",
+                        "password":"LmsUser"
+                     }
+
+    - /api/v1.0/lms/courses/add/
+
+        -->POST data:[
+                        {
+                            "course_name": "Backend-Python-WEB Development-2022-FSE",
+                            "course_duration": 480,
+                            "course_description": "Backend-Python-WEB Development-2022-FSE:Level-3 Coding and MCQs-Advanced programming in python and Datas structres",
+                            "technology": "Python",
+                            "launch_url": "https://flask.palletsprojects.com/en/2.2.x/"
+                        },
+                        {
+                            "course_name": "Platform-Cloud-AWS-2022-FSE",
+                            "course_duration": 720,
+                            "course_description": " Platform-Cloud-AWS-2022-FSE:Level-3 Coding and MCQs-Advanced programming in python and Datas structres",
+                            "technology": "Cloud",
+                            "launch_url": "https://docs.aws.amazon.com/"
+                        }
+                    ]
+
+    - /api/v1.0/lms/courses/info/Platform
+    - /api/v1.0/lms/courses/getall
+    - /api/v1.0/lms/courses/delete/Platform-Cloud-AWS-2022-FSE
+    - /api/v/1.0/lms/courses/get/Platform/500/1000
+</pre>
+</body>
+</html>
